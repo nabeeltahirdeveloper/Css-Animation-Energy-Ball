@@ -1,0 +1,39 @@
+body{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background: #000;
+}
+
+
+.energy{
+    position:relative;
+    width: 280px;
+    height: 200px;
+}
+
+.energy span{
+    width: calc(100px + var(--1));
+    height: calc(100px + var(--1));
+    position: absolute;
+    background-color: var(--clr);
+    border-radius: 50%;
+    animation:animate 5s linear infinite;
+    animation-duration: calc(var(--d));
+    mix-blend-mode: plus-lighter;
+    filter: blur(10px);
+    transform-origin: calc(60px + var(--1));
+}
+
+.energy span:nth-child(even){
+    animation-direction: reverse;
+}
+@keyframes animate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+    
